@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 
 const Register = () => {
@@ -20,6 +21,30 @@ const Register = () => {
     }
     const displayNewReg=()=>{
         console.log(newRegister)
+        const appLink="http://127.0.0.1:8000/api/newreg/"
+        axios.post(appLink,newRegister).then(
+            (response)=>{
+                console.log(response.data)
+                if(response.data.status=="added status")
+                {
+                    alert("successfully added")
+                    setNewRegister({
+
+                        firstName:"",
+                        middleName:"",
+                        lastName:"",
+                        gender:"",
+                        dateOfBirth:"",
+                        department:"",
+                        userName:"",
+                        email:"",
+                        password:"",
+                        confirmPassword:""
+
+                    })
+                }
+            }
+        )
     }
   return (
     <div>
