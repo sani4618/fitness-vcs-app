@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import ContactUs from './components/ContactUs';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Fitnessview from './components/Fitnessview';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/contact"exact element={<ContactUs/>}/>
       <Route path="/login"exact element={<Login/>}/>
       <Route path="/reg"exact element={<Register/>}/>
+      <Route path="/view"exact element={<Fitnessview/>}/>
     </Routes>
     </BrowserRouter>
   );
